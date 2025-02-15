@@ -3,63 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marinto-Richee - GitHub Profile & Resume</title>
+  <title>Marinto-Richee - Modern Profile & Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
+    /* Base Styles */
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
       margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #333;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
-    nav {
-      background: #444;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-    section {
-      padding: 20px;
-      margin: 20px;
-      background: #fff;
-      border-radius: 5px;
-    }
-    h2 {
-      border-bottom: 2px solid #333;
-      padding-bottom: 5px;
-    }
-    ul {
-      list-style-type: disc;
-      margin-left: 20px;
-    }
-    footer {
-      text-align: center;
-      padding: 10px;
-      background: #333;
-      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      line-height: 1.6;
     }
     a {
-      color: #0066cc;
+      color: #667eea;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Header with Particle Animation */
+    header {
+      position: relative;
+      height: 300px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      overflow: hidden;
+      text-align: center;
+      padding-top: 60px;
+      color: #fff;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+      font-weight: 600;
+      position: relative;
+      z-index: 2;
+    }
+    header p {
+      font-size: 1.2em;
+      position: relative;
+      z-index: 2;
+    }
+    #particle-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    
+    /* Navigation Bar */
+    nav {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      margin: 0 15px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #667eea;
+    }
+    
+    /* Section Styles */
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    section h2::after {
+      content: '';
+      width: 50%;
+      height: 3px;
+      background: #667eea;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    /* Grid Layout for Projects */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
     }
   </style>
 </head>
 <body>
   <header>
+    <canvas id="particle-canvas"></canvas>
     <h1>Marinto-Richee</h1>
-    <p>GitHub Profile & Resume</p>
+    <p>AI, Computer Vision & Data Science Specialist</p>
   </header>
   
   <nav>
-    <a href="#about">About Me</a>
+    <a href="#about">About</a>
     <a href="#education">Education</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
@@ -67,7 +132,7 @@
     <a href="#contact">Contact</a>
   </nav>
   
-  <section id="about">
+  <section id="about" class="card">
     <h2>About Me</h2>
     <p>
       Passionate AI and computer vision specialist pursuing a Master of Artificial Intelligence at the University of Technology Sydney.
@@ -78,7 +143,7 @@
     </p>
   </section>
   
-  <section id="education">
+  <section id="education" class="card">
     <h2>Education</h2>
     <ul>
       <li><strong>Master of Artificial Intelligence</strong> - University of Technology Sydney, Australia (Ongoing)</li>
@@ -88,24 +153,47 @@
   
   <section id="projects">
     <h2>Projects</h2>
-    <h3>Deep Learning Projects</h3>
-    <ul>
-      <li><strong>Deep Neural Network for Malaria Infected Cell Recognition</strong> - A deep neural network for detecting malaria infected cells.</li>
-      <li><strong>Convolutional Autoencoder for Image Denoising</strong> - An application that uses a convolutional autoencoder to remove noise from images.</li>
-      <li><strong>AI Image Annotator</strong> - A Python application built with tkinter for annotating images with bounding boxes, enhanced by an AI model for object detection.</li>
-      <li><strong>Enhanced Hand Written Register Number Recognition and Subject Code Detection</strong> - An automated solution to rename exam answer sheet PDFs by extracting critical information.</li>
-      <li><strong>Mood Eats Emotion Driven Food Recommendations</strong> - A system that analyzes facial expressions and textual sentiment to recommend food based on mood.</li>
-      <li><strong>YOLOv8 and GroundingDINO for Real Time License Plate Detection</strong> - A system combining YOLOv8 and GroundingDINO to detect license plates with high accuracy.</li>
-      <li><strong>AI-Powered Vehicle Detection and Management System</strong> (August 2024 – December 2024) - An AI-driven system for automatic vehicle detection, tracking, and management with license plate recognition and analytics.</li>
-    </ul>
-    <h3>Django Projects</h3>
-    <ul>
-      <li><strong>Mentoring Management System</strong> - A web application enabling college students to apply for mentorship with available mentors.</li>
-      <li><strong>Tech Society Website</strong> - A complete website managing community information, gallery, newsletter, and project showcases with an admin dashboard.</li>
-    </ul>
+    <div class="grid">
+      <div class="card">
+        <h3>Deep Neural Network for Malaria Infected Cell Recognition</h3>
+        <p>A deep neural network for detecting malaria infected cells.</p>
+      </div>
+      <div class="card">
+        <h3>Convolutional Autoencoder for Image Denoising</h3>
+        <p>An application that uses a convolutional autoencoder to remove noise from images.</p>
+      </div>
+      <div class="card">
+        <h3>AI Image Annotator</h3>
+        <p>A Python application built with tkinter for annotating images with bounding boxes, enhanced by an AI model for object detection.</p>
+      </div>
+      <div class="card">
+        <h3>Enhanced Hand Written Register Number Recognition</h3>
+        <p>An automated solution to rename exam answer sheet PDFs by extracting critical information.</p>
+      </div>
+      <div class="card">
+        <h3>Mood Eats Emotion Driven Food Recommendations</h3>
+        <p>A system that analyzes facial expressions and textual sentiment to recommend food based on mood.</p>
+      </div>
+      <div class="card">
+        <h3>YOLOv8 & GroundingDINO for License Plate Detection</h3>
+        <p>A system combining YOLOv8 and GroundingDINO to detect license plates with high accuracy.</p>
+      </div>
+      <div class="card">
+        <h3>AI-Powered Vehicle Detection & Management System</h3>
+        <p>An AI-driven system for automatic vehicle detection, tracking, and management with license plate recognition and analytics.</p>
+      </div>
+      <div class="card">
+        <h3>Mentoring Management System (Django)</h3>
+        <p>A web application enabling college students to apply for mentorship with available mentors.</p>
+      </div>
+      <div class="card">
+        <h3>Tech Society Website (Django)</h3>
+        <p>A complete website managing community information, gallery, newsletter, and project showcases with an admin dashboard.</p>
+      </div>
+    </div>
   </section>
   
-  <section id="skills">
+  <section id="skills" class="card">
     <h2>Skills</h2>
     <h3>Hard Skills</h3>
     <ul>
@@ -131,7 +219,7 @@
     </ul>
   </section>
   
-  <section id="certifications">
+  <section id="certifications" class="card">
     <h2>Certifications</h2>
     <ul>
       <li>Deep Learning Specialization (DeepLearning.AI)</li>
@@ -141,7 +229,7 @@
     </ul>
   </section>
   
-  <section id="contact">
+  <section id="contact" class="card">
     <h2>Contact</h2>
     <p><strong>Location:</strong> Enmore, Sydney NSW 2042, Australia</p>
     <p><strong>Phone:</strong> +61 494 401 226</p>
@@ -153,5 +241,55 @@
   <footer>
     <p>&copy; 2025 Marinto-Richee. All rights reserved.</p>
   </footer>
+  
+  <!-- Particle Animation Script -->
+  <script>
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = 300;
+    let particlesArray = [];
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = Math.random() * 1 - 0.5;
+        this.speedY = Math.random() * 1 - 0.5;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+        if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+      }
+      draw() {
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    function initParticles() {
+      particlesArray = [];
+      for (let i = 0; i < 100; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+      }
+      requestAnimationFrame(animateParticles);
+    }
+    initParticles();
+    animateParticles();
+    window.addEventListener('resize', function(){
+      canvas.width = window.innerWidth;
+      initParticles();
+    });
+  </script>
 </body>
 </html>
